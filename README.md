@@ -3,7 +3,7 @@
 ## Introducción
 Los agentes de IA todavía tienen dificultades con los sistemas CAPTCHA actuales. Las plataformas modernas anti-bot dependen de verificaciones basadas en comportamiento y en tokens, en lugar de rompecabezas visuales. Además, los agentes LLM no controlan señales de bajo nivel como huellas digitales del navegador, tiempos de ejecución o patrones de interacción.
 
-Esta guía explica por qué los sistemas anti-bot actuales representan un desafío para la automatización impulsada por IA y cómo herramientas de generación de tokens —como CapSolver— pueden integrarse en los flujos de trabajo para mantener la estabilidad en 2026. Se incluye un ejemplo mínimo en Python usando requests y una API estilo CapSolver.
+Esta guía explica por qué los sistemas anti-bot actuales representan un desafío para la automatización impulsada por IA y cómo herramientas de generación de tokens —como CapSolver— pueden integrarse en los flujos de trabajo para mantener la estabilidad en 2026. Se incluye un ejemplo mínimo en Python usando requests y una API estilo [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aiagent&utm_term=JamesC).
 
 ## Por qué los agentes de IA tienen dificultades
 
@@ -38,39 +38,39 @@ Asigna una puntuación de riesgo basada en huellas digitales y heurísticas de c
 
 Herramientas como CapSolver se basan en la emulación real de un navegador en lugar de resolver imágenes:
 
-**Simulación de comportamiento**
+- **Simulación de comportamiento**
 
 Se ejecuta una instancia completa del navegador con huellas realistas y tiempos coherentes.
 
-**Obtención del token**
+- **Obtención del token**
 
 El solucionador devuelve únicamente el token final (cf_clearance, token de Turnstile, token de reCAPTCHA).
 
-**Integración mediante API**
+- **Integración mediante API**
 
 Los scripts de automatización solicitan tokens proporcionando la URL objetivo y la clave del sitio.
 
 Esto coincide con la forma en que los sistemas modernos anti-bot validan a los clientes.
 
 ## Mejores prácticas para integrar solucionadores
-**Usar proxys de calidad**
+- **Usar proxys de calidad**
 
 La reputación del IP afecta las tasas de desafío y los puntajes.
 
-**Implementar manejo de errores**
+- **Implementar manejo de errores**
 
 Estos sistemas son probabilísticos. Son comunes los reintentos o la rotación de IP.
 
-**Respetar la expiración del token**
+- **Respetar la expiración del token**
 
 Muchos tokens expiran en 90–120 segundos. Obtén el token solo cuando se vaya a usar.
 
-**Usar el endpoint correcto**
+- **Usar el endpoint correcto**
 
 Turnstile, reCAPTCHA v3 y AWS WAF usan protocolos distintos.
 CapSolver y herramientas similares ofrecen endpoints dedicados para cada tipo.
 
-## Ejemplo en Python: Cloudflare Turnstile (API estilo CapSolver)
+## Ejemplo en Python: Cloudflare Turnstile (API estilo [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aiagent&utm_term=JamesC))
 
 ```
 import requests
@@ -177,13 +177,14 @@ print("4. Success! Protected content accessed.")
 print("-----------------------------------------")
 ```
 Este ejemplo refleja cómo las APIs estilo CapSolver se integran en flujos de automatización.
-**¡Visita el panel de CapSolver para canjear tu 5% de bono adicional ahora!**
+**¡Visita el panel de [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aiagent&utm_term=JamesC) para canjear tu 5% de bono adicional ahora!**
+![Uploading image.png…]()
 
 
 ## Conclusión
 
 Los sistemas CAPTCHA modernos se basan en validación de comportamiento y generación de tokens, no en rompecabezas visuales.
-Los agentes de IA no pueden reproducir de forma fiable señales reales del navegador, por lo que la automatización en producción suele combinar agentes con solucionadores especializados como CapSolver.
+Los agentes de IA no pueden reproducir de forma fiable señales reales del navegador, por lo que la automatización en producción suele combinar agentes con solucionadores especializados como [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aiagent&utm_term=JamesC).
 
 ## FAQ
 
