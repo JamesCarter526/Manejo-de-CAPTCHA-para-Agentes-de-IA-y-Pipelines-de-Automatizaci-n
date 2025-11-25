@@ -1,4 +1,5 @@
-<img width="1267" height="723" alt="image" src="https://github.com/user-attachments/assets/50e851e1-dd43-4e4c-a618-f1b8b4faf5f5" />
+<img width="1276" height="724" alt="image" src="https://github.com/user-attachments/assets/57fe1e66-b608-4701-9b2c-a48405425102" />
+
 
 ## Introducción
 Los agentes de IA todavía tienen dificultades con los sistemas CAPTCHA actuales. Las plataformas modernas anti-bot dependen de verificaciones basadas en comportamiento y en tokens, en lugar de rompecabezas visuales. Además, los agentes LLM no controlan señales de bajo nivel como huellas digitales del navegador, tiempos de ejecución o patrones de interacción.
@@ -178,7 +179,8 @@ print("-----------------------------------------")
 ```
 Este ejemplo refleja cómo las APIs estilo CapSolver se integran en flujos de automatización.
 **¡Visita el panel de [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aiagent&utm_term=JamesC) para canjear tu 5% de bono adicional ahora!**
-![Uploading image.png…]()
+<img width="506" height="287" alt="image" src="https://github.com/user-attachments/assets/72265ff9-eb8f-4fc7-bbc8-cba9d3a30e0f" />
+
 
 
 ## Conclusión
