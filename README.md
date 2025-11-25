@@ -1,3 +1,4 @@
+<img width="1267" height="723" alt="image" src="https://github.com/user-attachments/assets/50e851e1-dd43-4e4c-a618-f1b8b4faf5f5" />
 
 ## Introducción
 Los agentes de IA todavía tienen dificultades con los sistemas CAPTCHA actuales. Las plataformas modernas anti-bot dependen de verificaciones basadas en comportamiento y en tokens, en lugar de rompecabezas visuales. Además, los agentes LLM no controlan señales de bajo nivel como huellas digitales del navegador, tiempos de ejecución o patrones de interacción.
@@ -21,15 +22,15 @@ Esta guía explica por qué los sistemas anti-bot actuales representan un desaf�
 Estas verificaciones requieren un entorno de ejecución de navegador completo —algo que los agentes de propósito general no pueden proporcionar.
 
 ## Panorama de los sistemas anti-bot modernos
-**- Cloudflare Turnstile**
+- **Cloudflare Turnstile**
 
 Turnstile es mayormente invisible y devuelve un token tras evaluar el comportamiento del cliente y scripts en segundo plano. La automatización se centra en obtener el token, no en resolver un puzzle visual.
 
-**- AWS WAF Bot Control**
+- **AWS WAF Bot Control**
 
 Usa puntuación de comportamiento y desafíos basados en navegador vinculados a la infraestructura de AWS. Los tokens válidos requieren una ejecución de navegador simulada.
 
-**- reCAPTCHA v3**
+- **reCAPTCHA v3**
 
 Asigna una puntuación de riesgo basada en huellas digitales y heurísticas de comportamiento. Es difícil obtener puntuaciones altas sin una sesión de navegador realista.
 
@@ -37,34 +38,34 @@ Asigna una puntuación de riesgo basada en huellas digitales y heurísticas de c
 
 Herramientas como CapSolver se basan en la emulación real de un navegador en lugar de resolver imágenes:
 
-**- Simulación de comportamiento**
+**Simulación de comportamiento**
 
 Se ejecuta una instancia completa del navegador con huellas realistas y tiempos coherentes.
 
-**- Obtención del token**
+**Obtención del token**
 
 El solucionador devuelve únicamente el token final (cf_clearance, token de Turnstile, token de reCAPTCHA).
 
-**- Integración mediante API**
+**Integración mediante API**
 
 Los scripts de automatización solicitan tokens proporcionando la URL objetivo y la clave del sitio.
 
 Esto coincide con la forma en que los sistemas modernos anti-bot validan a los clientes.
 
 ## Mejores prácticas para integrar solucionadores
-**- Usar proxys de calidad**
+**Usar proxys de calidad**
 
 La reputación del IP afecta las tasas de desafío y los puntajes.
 
-**- Implementar manejo de errores**
+**Implementar manejo de errores**
 
 Estos sistemas son probabilísticos. Son comunes los reintentos o la rotación de IP.
 
-**- Respetar la expiración del token**
+**Respetar la expiración del token**
 
 Muchos tokens expiran en 90–120 segundos. Obtén el token solo cuando se vaya a usar.
 
-**- Usar el endpoint correcto**
+**Usar el endpoint correcto**
 
 Turnstile, reCAPTCHA v3 y AWS WAF usan protocolos distintos.
 CapSolver y herramientas similares ofrecen endpoints dedicados para cada tipo.
