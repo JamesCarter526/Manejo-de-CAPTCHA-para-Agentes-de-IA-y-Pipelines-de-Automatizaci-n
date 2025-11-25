@@ -179,6 +179,7 @@ print("-----------------------------------------")
 ```
 Este ejemplo refleja cómo las APIs estilo CapSolver se integran en flujos de automatización.
 **¡Visita el panel de [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aiagent&utm_term=JamesC) para canjear tu 5% de bono adicional ahora!**
+
 <img width="506" height="287" alt="image" src="https://github.com/user-attachments/assets/72265ff9-eb8f-4fc7-bbc8-cba9d3a30e0f" />
 
 
